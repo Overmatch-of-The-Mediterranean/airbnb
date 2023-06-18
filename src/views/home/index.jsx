@@ -1,30 +1,38 @@
-import React, { memo, useEffect,useState } from 'react'
-import hyRequest from '@/services'
+import React, { memo, useEffect } from 'react'
+import { HomeWrapper } from './style'
+import HomeBanner from './c-cpns/home-banner'
+import { shallowEqual, useDispatch, useSelector } from 'react-redux'
+import { fetchHomeGoodPriceDataAction } from '@/store/modules/home'
 
 const Home = memo(() => {
-    const [highScore,setHighScore] = useState({})
+
+    const { goodPrice } = useSelector(state=>({
+        goodPrice:state.home.goodPrice
+    }),shallowEqual)
+
+    const dispatch = useDispatch()
 
     useEffect(()=>{
-        hyRequest.get({url:'/home/highscore'}).then(res=>{
-            console.log(res);
-            setHighScore(res)
-        })
-    },[])
+        dispatch(fetchHomeGoodPriceDataAction())
+    },[dispatch])
+
 
   return (
-    <div>
-        <h2>{highScore.title}</h2>
-        <h2>{highScore.subtitle}</h2>
-        <ul>
-            {
-                highScore.list?.map(item=>{
-                    return(
+    <HomeWrapper>
+        <HomeBanner/>
+        <div className="content">
+            <div className="title">{goodPrice.title}</div>
+            <ul>
+                {
+                   goodPrice.list?.map(item=>{
+                     return (
                         <li key={item.id}>{item.name}</li>
                     )
-                })
-            }
-        </ul>
-    </div>
+                   })
+                }
+            </ul>
+        </div>
+    </HomeWrapper>
   )
 })
 

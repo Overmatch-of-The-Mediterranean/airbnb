@@ -28,4 +28,5 @@ class HyRequest {
     }
 }
 
+// eslint-disable-next-line 
 export default new HyRequest(BASE_URL,TIMEOUT)
