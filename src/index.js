@@ -5,7 +5,10 @@ import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 
 import App from '@/App';
+import "normalize.css"
 import '@/assets/css/index.less'
+// import "antd/dist/antd.less"
+import 'antd/dist/antd'
 import store from '@/store';
 import theme from './assets/theme';
 
