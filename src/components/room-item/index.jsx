@@ -4,10 +4,10 @@ import Rating from '@mui/material/Rating';
 import { ItemWrapper } from './style'
 
 const RoomItem = memo((props) => {
-    const {item} = props
+    const {item,itemwidth} = props
 
   return (
-    <ItemWrapper verifycolor={item?.verify_info.text_color || "#39576a"}>
+    <ItemWrapper itemwidth={itemwidth} verifycolor={item?.verify_info.text_color || "#39576a"}>
         <div className="inner">
             <div className="cover">
                 <img src={item.picture_url} alt="" />
