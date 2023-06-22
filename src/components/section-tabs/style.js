@@ -1,8 +1,8 @@
 import { styled } from "styled-components";
 
 export const TabsWrapper = styled.div`
-    display: flex;
-    
+    /* display: flex; */
+    padding: 8px 0;
     .item {
         box-sizing: border-box;
         flex-basis: 120px;

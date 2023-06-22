@@ -1,10 +1,10 @@
 import { styled } from "styled-components";
 
 export const ItemWrapper = styled.div`
+    flex-shrink: 0;
     width: ${props => props.itemwidth};
     padding: 8px;
     box-sizing: border-box;
-
     .inner {
     width: 100%;
   }

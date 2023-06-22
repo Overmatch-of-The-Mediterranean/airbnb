@@ -31,7 +31,8 @@ const RoomItem = memo((props) => {
 })
 
 RoomItem.propTypes = {
-    item:PropTypes.object
+    item:PropTypes.object,
+    itemwidth:PropTypes.string
 }
 
 export default RoomItem

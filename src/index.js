@@ -6,15 +6,16 @@ import { ThemeProvider } from 'styled-components';
 
 import App from '@/App';
 import "normalize.css"
-import '@/assets/css/index.less'
+
 // import "antd/dist/antd.less"
 import 'antd/dist/antd'
+import '@/assets/css/index.less'
 import store from '@/store';
 import theme from './assets/theme';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+//   <React.StrictMode>
     <Suspense fallback="loading...">
         <HashRouter>
             <Provider store={store}>
@@ -24,6 +25,6 @@ root.render(
             </Provider>
         </HashRouter>
     </Suspense>
-  </React.StrictMode>
+//   </React.StrictMode>
 );
 
