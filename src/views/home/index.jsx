@@ -10,6 +10,7 @@ import HomeSectionV1 from './c-cpns/home-section-v1'
 import HomeSectionV2 from './c-cpns/home-section-v2'
 import HomeLongFor from './c-cpns/home-longfor'
 import HomeSectionV3 from './c-cpns/home-section-v3'
+import { changeHeaderConfigAction } from '@/store/modules/main'
 
 const Home = memo(() => {
 
@@ -30,6 +31,7 @@ const Home = memo(() => {
     // 派发异步的事件：发送网络请求
     useEffect(()=>{
         dispatch(fetchHomeGoodPriceDataAction())
+        dispatch(changeHeaderConfigAction({fixed:true}))
     },[dispatch])
 
 
