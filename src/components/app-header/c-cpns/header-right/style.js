@@ -15,9 +15,9 @@ export const RightWrapper = styled.div`
             border-radius: 22px;
             cursor: pointer;
             box-sizing: content-box;
-
+            color: ${props=>props.theme.isAlpha ? '#fff':'#484848'};
             &:hover {
-                background-color: #f5f5f5;
+                background-color: ${props=>props.theme.isAlpha ? 'rgba(255,255,255,0.2)':'#f5f5f5'};
             }
         }
     }
@@ -54,6 +54,8 @@ export const RightWrapper = styled.div`
                 padding: 10px 0;
 
                 .item {
+                    box-sizing: border-box;
+                    width: 100%;
                     height: 40px;
                     line-height: 40px;
                     padding: 0 16px;
@@ -66,6 +68,9 @@ export const RightWrapper = styled.div`
 
             .top {
                 border-bottom: 1px solid #ddd;
+                display: flex;
+                align-items: start;
+                flex-direction: column;
             }
         }
     }

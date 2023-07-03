@@ -31,7 +31,7 @@ const Home = memo(() => {
     // 派发异步的事件：发送网络请求
     useEffect(()=>{
         dispatch(fetchHomeGoodPriceDataAction())
-        dispatch(changeHeaderConfigAction({fixed:true}))
+        dispatch(changeHeaderConfigAction({fixed:true,topAlpha:true}))
     },[dispatch])
 
 

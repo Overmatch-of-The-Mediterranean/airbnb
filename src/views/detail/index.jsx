@@ -7,7 +7,7 @@ import { changeHeaderConfigAction } from '@/store/modules/main'
 const Detail = memo(() => {
     const dispatch = useDispatch()
     useEffect(()=>{
-        dispatch(changeHeaderConfigAction({fixed:false}))
+        dispatch(changeHeaderConfigAction({fixed:false,topAlpha:false}))
     },[dispatch])
 
   return (
